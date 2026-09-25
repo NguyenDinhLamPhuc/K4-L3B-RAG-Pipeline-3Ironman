@@ -1,8 +1,23 @@
 import streamlit as st
 from dotenv import load_dotenv
+from src.task10_generation import generate_with_citation
 
 
 load_dotenv()
+
+
+def render_sources(sources, retrieval_source):
+    if not sources:
+        return
+    st.caption(f"Retrieval: {retrieval_source}")
+    for source in sources:
+        metadata = source["metadata"]
+        with st.expander(f"[Source: {source['id']}] — {metadata['title']}"):
+            st.text(f"Source: {metadata['source']}")
+            st.text(f"Score: {source['score']:.6f} | Method: {source['retrieval_method']}")
+            if metadata.get("url"):
+                st.text(metadata["url"])
+            st.text(source["content"])
 
 st.set_page_config(
     page_title="RAG Chatbot",
@@ -24,7 +39,7 @@ st.caption("Thay tiêu đề và hướng dẫn sử dụng")
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        # TODO: Hiển thị sources và retrieval score.
+        render_sources(message.get("sources", []), message.get("retrieval_source", "none"))
 
 query = st.chat_input("Nhập câu hỏi...")
 
@@ -35,11 +50,12 @@ if query:
         st.markdown(query)
 
     with st.chat_message("assistant"):
-        # TODO: Gọi generate_with_citation(query, top_k).
-        answer = "TODO: Itegration RAG Pipeline hêre"
-        sources = []
-        st.markdown(answer)
+        with st.spinner("Đang tìm nguồn và tạo câu trả lời..."):
+            result = generate_with_citation(query, top_k=top_k)
+        st.markdown(result["answer"])
+        render_sources(result["sources"], result["retrieval_source"])
 
-        # TODO: Hiển thị sources và citation.
-
-    # TODO: Lưu answer và sources vào session state.
+    st.session_state.messages.append({
+        "role": "assistant", "content": result["answer"],
+        "sources": result["sources"], "retrieval_source": result["retrieval_source"],
+    })
