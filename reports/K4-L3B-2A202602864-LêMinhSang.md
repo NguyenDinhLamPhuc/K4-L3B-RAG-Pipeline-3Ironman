@@ -1,12 +1,12 @@
-# Individual Contribution Report — Nguyễn Minh Sang
+# Individual Contribution Report — Lê Minh Sang
 
 ## Thông tin
 
-- **Họ và tên:** Nguyễn Minh Sang
-- **Mã học viên:** AI20K-SANG-02
-- **Nhóm:** Nhóm 3 thành viên (Phúc · Sang · Phát)
+- **Họ và tên:** Lê Minh Sang
+- **Mã học viên:** 2A202602864
+- **Nhóm:** 3Ironman
 - **Vai trò:** Core RAG Engineer (Xương sống kỹ thuật RAG)
-- **Repository / Branch:** `NguyenDinhLamPhuc/K4-L3B-RAG-Pipeline-3Ironman` / `feat/sang-core-rag`
+- **Repository / Branch:** `feat/sang-core-rag`
 
 ---
 
@@ -62,4 +62,4 @@
 Tôi xác nhận nội dung trên phản ánh đúng phần việc của mình và có thể giải thích hoặc chạy lại trong buổi demo.
 
 - **Ngày:** 2026-09-25
-- **Tên thành viên:** Nguyễn Minh Sang
+- **Tên thành viên:** Lê Minh Sang

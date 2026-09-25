@@ -166,6 +166,6 @@ Thực nghiệm đánh giá theo khung chuẩn **Ragas** trên tập Golden Data
 
 | Thành viên | Vai trò | Nhiệm vụ chính phụ trách | Báo cáo chi tiết |
 |---|---|---|:---:|
-| **Nguyễn Đình Lâm Phúc** | Nhóm trưởng / UI & Delivery | Điều phối workflow, PageIndex fallback provider (Task 8), Streamlit UI (`app.py`), tổng hợp đánh giá và test gate | [phuc_report.md](reports/phuc_report.md) |
-| **Nguyễn Minh Sang** | Core RAG Engineer | Chunking & Chroma indexing (Task 4), Dense search (Task 5), RRF Fusion (Task 7), Retrieval pipeline (Task 9), Generation & Citations (Task 10) | [sang_report.md](reports/sang_report.md) |
-| **Nguyễn Tấn Phát** | Data Engineer & Evaluation | Thu thập văn bản luật (Task 1), crawl bài viết (Task 2), chuẩn hóa Markdown (Task 3), BM25 Lexical (Task 6), Golden dataset 20 câu | [phat_report.md](reports/phat_report.md) |
+| **Nguyễn Đình Lâm Phúc** | Nhóm trưởng / UI & Delivery | Điều phối workflow, PageIndex fallback provider (Task 8), Streamlit UI (`app.py`), tổng hợp đánh giá và test gate | [K4-L3B-2A202602986-NguyễnĐìnhLâmPhúc.md](reports/K4-L3B-2A202602986-NguyễnĐìnhLâmPhúc.md) |
+| **Lê Minh Sang** | Core RAG Engineer | Chunking & Chroma indexing (Task 4), Dense search (Task 5), RRF Fusion (Task 7), Retrieval pipeline (Task 9), Generation & Citations (Task 10) | [K4-L3B-2A202602864-LêMinhSang.md](reports/K4-L3B-2A202602864-LêMinhSang.md) |
+| **Nguyễn Tiến Phát** | Data Engineer & Evaluation | Thu thập văn bản luật (Task 1), crawl bài viết (Task 2), chuẩn hóa Markdown (Task 3), BM25 Lexical (Task 6), Golden dataset 20 câu | [K4-L3B-2A202602387-NguyễnTiếnPhát.md](reports/K4-L3B-2A202602387-NguyễnTiếnPhát.md) |
