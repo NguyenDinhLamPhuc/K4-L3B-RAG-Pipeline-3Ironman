@@ -11,6 +11,7 @@ Mỗi document/chunk phải theo docs/MODULE_CONTRACTS.md. ID cần ổn định
 chạy lại pipeline không tạo dữ liệu trùng. Task 5 phải dùng chung embed_texts().
 """
 
+from copy import deepcopy
 import os
 from pathlib import Path
 from typing import Any
@@ -30,22 +31,23 @@ CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 CHUNKING_METHOD = "recursive"
 
-EMBEDDING_MODEL = "BAAI/bge-m3"
+EMBEDDING_PROVIDER = os.getenv("EMBEDDING_PROVIDER", "sentence_transformers")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-m3")
 EMBEDDING_DIM = 1024
+BATCH_SIZE = 32
 
 COLLECTION_NAME = "rag_documents"
 
 _EMBEDDING_MODEL_INSTANCE: Any = None
 
 
-def _get_embedding_model():
+def _local_model(name: str):
     """Tải và lưu trữ singleton instance của embedding model."""
     global _EMBEDDING_MODEL_INSTANCE
     if _EMBEDDING_MODEL_INSTANCE is None:
         from sentence_transformers import SentenceTransformer
 
-        model_name = os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL)
-        _EMBEDDING_MODEL_INSTANCE = SentenceTransformer(model_name)
+        _EMBEDDING_MODEL_INSTANCE = SentenceTransformer(name)
     return _EMBEDDING_MODEL_INSTANCE
 
 
@@ -54,13 +56,20 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     if not texts:
         return []
 
-    provider = os.getenv("EMBEDDING_PROVIDER", "sentence_transformers").lower()
+    provider = (EMBEDDING_PROVIDER or "sentence_transformers").lower()
 
     if provider == "sentence_transformers":
-        model = _get_embedding_model()
+        model_name = EMBEDDING_MODEL
+        model = _local_model(model_name)
+        if hasattr(model, "get_sentence_embedding_dimension"):
+            actual_dim = model.get_sentence_embedding_dimension()
+            if actual_dim != EMBEDDING_DIM:
+                raise ValueError(
+                    f"Embedding dimension {actual_dim} does not match expected {EMBEDDING_DIM}"
+                )
         embeddings = model.encode(
             texts,
-            batch_size=32,
+            batch_size=BATCH_SIZE,
             show_progress_bar=False,
             normalize_embeddings=True,
         )
@@ -70,7 +79,7 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
         from openai import OpenAI
 
         client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        model_name = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+        model_name = EMBEDDING_MODEL or "text-embedding-3-small"
         response = client.embeddings.create(input=texts, model=model_name)
         return [item.embedding for item in response.data]
 
@@ -78,7 +87,7 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
         from google import genai
 
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-        model_name = os.getenv("EMBEDDING_MODEL", "text-embedding-004")
+        model_name = EMBEDDING_MODEL or "text-embedding-004"
         embeddings: list[list[float]] = []
         for text in texts:
             result = client.models.embed_content(
@@ -89,10 +98,16 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
         return embeddings
 
     # Fallback mặc định về sentence_transformers
-    model = _get_embedding_model()
+    model = _local_model(EMBEDDING_MODEL)
+    if hasattr(model, "get_sentence_embedding_dimension"):
+        actual_dim = model.get_sentence_embedding_dimension()
+        if actual_dim != EMBEDDING_DIM:
+            raise ValueError(
+                f"Embedding dimension {actual_dim} does not match expected {EMBEDDING_DIM}"
+            )
     embeddings = model.encode(
         texts,
-        batch_size=32,
+        batch_size=BATCH_SIZE,
         show_progress_bar=False,
         normalize_embeddings=True,
     )
@@ -100,15 +115,32 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
 
 
 def get_collection():
-    """Mở Chroma collection dùng cosine distance."""
+    """Mở Chroma collection dùng cosine distance và kiểm tra cấu hình tương thích."""
     import chromadb
 
     CHROMA_DIR.mkdir(parents=True, exist_ok=True)
     client = chromadb.PersistentClient(path=str(CHROMA_DIR))
-    return client.get_or_create_collection(
-        name=COLLECTION_NAME,
-        metadata={"hnsw:space": "cosine"},
-    )
+
+    try:
+        existing = client.get_collection(name=COLLECTION_NAME)
+        meta = existing.metadata or {}
+        if meta.get("model") and meta.get("model") != EMBEDDING_MODEL:
+            raise ValueError(
+                f"Chroma collection configuration differs: stored model '{meta.get('model')}' "
+                f"vs requested '{EMBEDDING_MODEL}'"
+            )
+        return existing
+    except Exception as exc:
+        if "configuration differs" in str(exc):
+            raise
+        return client.get_or_create_collection(
+            name=COLLECTION_NAME,
+            metadata={
+                "hnsw:space": "cosine",
+                "model": EMBEDDING_MODEL,
+                "dimension": EMBEDDING_DIM,
+            },
+        )
 
 
 def _parse_frontmatter_and_content(raw_text: str) -> tuple[dict, str]:
@@ -178,7 +210,8 @@ def load_documents() -> list[dict]:
             if extra_key in fm_meta:
                 doc_meta[extra_key] = fm_meta[extra_key]
 
-        doc_id = path.relative_to(STANDARDIZED_DIR).as_posix()
+        # Ưu tiên ID từ frontmatter, fallback về relative path
+        doc_id = str(fm_meta.get("id") or path.relative_to(STANDARDIZED_DIR).as_posix()).strip()
         document = {
             "id": doc_id,
             "content": content_to_use,
@@ -207,31 +240,46 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
             if not cleaned_text:
                 continue
 
-            chunk_meta = dict(document["metadata"])
-            chunk_meta["chunk_index"] = chunk_idx
+            # Đảm bảo độ dài không vượt quá CHUNK_SIZE
+            if len(cleaned_text) > CHUNK_SIZE:
+                sub_chunks = [
+                    cleaned_text[j : j + CHUNK_SIZE]
+                    for j in range(0, len(cleaned_text), CHUNK_SIZE - CHUNK_OVERLAP)
+                ]
+            else:
+                sub_chunks = [cleaned_text]
 
-            chunk = {
-                "id": f"{document['id']}::chunk-{chunk_idx}",
-                "content": cleaned_text,
-                "metadata": chunk_meta,
-            }
-            validate_document(chunk, require_chunk=True)
-            chunks.append(chunk)
-            chunk_idx += 1
+            for sub_text in sub_chunks:
+                sub_cleaned = sub_text.strip()
+                if not sub_cleaned:
+                    continue
+
+                chunk_meta = dict(document["metadata"])
+                chunk_meta["chunk_index"] = chunk_idx
+
+                chunk = {
+                    "id": f"{document['id']}::chunk-{chunk_idx}",
+                    "content": sub_cleaned,
+                    "metadata": chunk_meta,
+                }
+                validate_document(chunk, require_chunk=True)
+                chunks.append(chunk)
+                chunk_idx += 1
 
     return chunks
 
 
 def embed_chunks(chunks: list[dict]) -> list[dict]:
-    """Thêm embedding vào từng chunk."""
+    """Thêm embedding vào bản sao từng chunk mà không thay đổi chunks đầu vào."""
     if not chunks:
         return []
 
     texts = [chunk["content"] for chunk in chunks]
     vectors = embed_texts(texts)
-    for chunk, vector in zip(chunks, vectors):
+    output_chunks = deepcopy(chunks)
+    for chunk, vector in zip(output_chunks, vectors):
         chunk["embedding"] = vector
-    return chunks
+    return output_chunks
 
 
 def index_to_vectorstore(chunks: list[dict]) -> None:
