@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-25T10:25:11+07:00",
+  "source": "Cổng Thông tin điện tử Chính phủ",
+  "document_count": 4,
+  "documents": [
+    {
+      "id": "LEGAL-01",
+      "filename": "bo_luat_lao_dong_2019_45_2019_QH14.pdf",
+      "title": "Bộ luật Lao động 2019",
+      "law_number": "45/2019/QH14",
+      "issued_date": "2019-11-20",
+      "effective_date": "2021-01-01",
+      "domain": "labor",
+      "source_priority": 1,
+      "historical": false,
+      "url": "https://vanban.chinhphu.vn/?docid=198540&pageid=27160",
+      "download_url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2019/12/45.signed.pdf",
+      "text_source_url": "https://apolatlegal.com/wp-content/uploads/2023/12/Luat-Lao-dong.-2019.pdf",
+      "text_source_filename": "bo_luat_lao_dong_2019_45_2019_QH14_text.pdf",
+      "bytes": 5232503,
+      "sha256": "a0c0fcc3b9e040bcdcab70191f0ab95952183be94a6f5bc6424e8d3e85697139",
+      "downloaded_at": "2026-09-25T10:25:11+07:00",
+      "text_source": {
+        "url": "https://apolatlegal.com/wp-content/uploads/2023/12/Luat-Lao-dong.-2019.pdf",
+        "filename": "bo_luat_lao_dong_2019_45_2019_QH14_text.pdf",
+        "bytes": 476735,
+        "sha256": "110c7b22ad3c5e6b34720c1705c38e606f63d1e756e14608654b18a7edc5de68",
+        "purpose": "text extraction for a scanned original PDF"
+      }
+    },
+    {
+      "id": "LEGAL-02",
+      "filename": "luat_bhxh_2024_41_2024_QH15.pdf",
+      "title": "Luật Bảo hiểm xã hội 2024",
+      "law_number": "41/2024/QH15",
+      "issued_date": "2024-06-29",
+      "effective_date": "2025-07-01",
+      "domain": "social_insurance",
+      "source_priority": 1,
+      "historical": false,
+      "url": "https://vanban.chinhphu.vn/?classid=1&docid=211199&orggroupid=1&pageid=27160",
+      "download_url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/9/41-2024-qh15.pdf",
+      "bytes": 1311363,
+      "sha256": "d46db2fcf0a62e8d788f99612071c881bbba0e00ec1992691f615fd1832ce8e8",
+      "downloaded_at": "2026-09-25T10:25:11+07:00",
+      "text_source": null
+    },
+    {
+      "id": "LEGAL-03",
+      "filename": "nghi_dinh_145_2020_ND_CP.pdf",
+      "title": "Nghị định 145/2020/NĐ-CP hướng dẫn Bộ luật Lao động về điều kiện lao động và quan hệ lao động",
+      "law_number": "145/2020/NĐ-CP",
+      "issued_date": "2020-12-14",
+      "effective_date": "2021-02-01",
+      "domain": "labor",
+      "source_priority": 1,
+      "historical": false,
+      "url": "https://vanban.chinhphu.vn/default.aspx?docid=201967&pageid=27160",
+      "download_url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/12/145.signed.pdf",
+      "text_source_url": "https://luatonline.vn/wp-content/uploads/2025/05/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong.doc",
+      "text_source_filename": "nghi_dinh_145_2020_ND_CP_text.doc",
+      "bytes": 6176759,
+      "sha256": "a72a1ff295cc06fbddd335d57257688f5118826968cd8b62d58f50fc1554b230",
+      "downloaded_at": "2026-09-25T10:25:11+07:00",
+      "text_source": {
+        "url": "https://luatonline.vn/wp-content/uploads/2025/05/Nghi-dinh-145-2020-ND-CP-huong-dan-Bo-luat-Lao-dong-ve-dieu-kien-lao-dong-quan-he-lao-dong.doc",
+        "filename": "nghi_dinh_145_2020_ND_CP_text.doc",
+        "bytes": 1868800,
+        "sha256": "75a6de33eeed9df4e966cb6b3cc462ebb54aa3619c2ed4ff860eb18f7a95cc45",
+        "purpose": "text extraction for a scanned original PDF"
+      }
+    },
+    {
+      "id": "LEGAL-04",
+      "filename": "nghi_dinh_158_2025_ND_CP.pdf",
+      "title": "Nghị định 158/2025/NĐ-CP hướng dẫn Luật Bảo hiểm xã hội về bảo hiểm xã hội bắt buộc",
+      "law_number": "158/2025/NĐ-CP",
+      "issued_date": "2025-06-25",
+      "effective_date": "2025-07-01",
+      "domain": "social_insurance",
+      "source_priority": 1,
+      "historical": false,
+      "url": "https://vanban.chinhphu.vn/?classid=1&docid=214189&orggroupid=2&pageid=27160",
+      "download_url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/158-ndcp.signed.pdf",
+      "text_source_url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-158-2025-nd-cp-quy-dinh-ve-bao-hiem-xa-hoi-bat-buoc-119250629171336803.htm",
+      "text_source_filename": "nghi_dinh_158_2025_ND_CP_text.html",
+      "bytes": 2276739,
+      "sha256": "51b605010600da706432e19bf80bada5f099f66806e3eba502517febc70d3e95",
+      "downloaded_at": "2026-09-25T10:25:11+07:00",
+      "text_source": {
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-158-2025-nd-cp-quy-dinh-ve-bao-hiem-xa-hoi-bat-buoc-119250629171336803.htm",
+        "filename": "nghi_dinh_158_2025_ND_CP_text.html",
+        "bytes": 868265,
+        "sha256": "c1b46f1daf9ed13c41c4bac0a6c001a2d4057f15f600186197d3a0b3f5dd3dbc",
+        "purpose": "text extraction for a scanned original PDF"
+      }
+    }
+  ]
+}

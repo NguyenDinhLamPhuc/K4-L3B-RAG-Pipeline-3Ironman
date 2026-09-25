@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-25T10:26:28+07:00",
+  "document_count": 9,
+  "legal_count": 4,
+  "news_count": 5,
+  "documents": [
+    {
+      "path": "data/standardized/legal/bo_luat_lao_dong_2019_45_2019_QH14.md",
+      "bytes": 258916,
+      "sha256": "fb61f8e1472662891354349c22334134a6035db5a7456cd4a1cc4e96c0456cdd"
+    },
+    {
+      "path": "data/standardized/legal/luat_bhxh_2024_41_2024_QH15.md",
+      "bytes": 251005,
+      "sha256": "47354251da4beee0b4c6431c672180920b90622286d30e954e5e02c886e41a20"
+    },
+    {
+      "path": "data/standardized/legal/nghi_dinh_145_2020_ND_CP.md",
+      "bytes": 257265,
+      "sha256": "f52101c18670c45a94c4c5d943224a99779d4b9cbd323063cc58dde714b468ec"
+    },
+    {
+      "path": "data/standardized/legal/nghi_dinh_158_2025_ND_CP.md",
+      "bytes": 161005,
+      "sha256": "944f4d7ee5e8578895607bd8275a10d96755c4da6e4f69d563de98533120a66c"
+    },
+    {
+      "path": "data/standardized/news/article_01.md",
+      "bytes": 13866,
+      "sha256": "3b592ab817e424b2a40fd7e0321394464d425da07ea1d479b1ec8cad0116d4e5"
+    },
+    {
+      "path": "data/standardized/news/article_02.md",
+      "bytes": 10988,
+      "sha256": "7dc5d8da3d09032e70826e0507eae17af53fb2cf3386eb4c8c718d2a332f1905"
+    },
+    {
+      "path": "data/standardized/news/article_03.md",
+      "bytes": 20811,
+      "sha256": "4d6d2c08940bea24d399efdf8a53ea946c6d12db83b7b1bc031045b97b7f287d"
+    },
+    {
+      "path": "data/standardized/news/article_04.md",
+      "bytes": 4113,
+      "sha256": "6a74e3c5f1089522eefd81f5b18780da0e187cdfbadb3cbc57d5c0258ad10574"
+    },
+    {
+      "path": "data/standardized/news/article_05.md",
+      "bytes": 11179,
+      "sha256": "3de0f7cc69c7e410cc2379827a2f5c7171e2dab0f73ac22d3a42e114bbc06879"
+    }
+  ]
+}
