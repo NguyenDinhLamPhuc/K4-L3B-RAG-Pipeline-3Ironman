@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Thời gian thử việc tối đa đối với người làm công việc có chức danh nghề nghiệp cần trình độ cao đẳng trở lên là bao lâu?",
+    "expected_answer": "Thời gian thử việc không quá 60 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên.",
+    "expected_context": "Điều 25 Bộ luật Lao động 2019 quy định thời gian thử việc không quá 60 ngày đối với công việc có chức danh nghề nghiệp cần trình độ chuyên môn, kỹ thuật từ cao đẳng trở lên."
+  },
+  {
+    "question": "Tiền lương của người lao động trong thời gian thử việc tối thiểu bằng bao nhiêu phần trăm tiền lương của công việc đó?",
+    "expected_answer": "Tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó.",
+    "expected_context": "Điều 26 Bộ luật Lao động 2019 quy định tiền lương của người lao động trong thời gian thử việc do hai bên thỏa thuận nhưng ít nhất phải bằng 85% mức lương của công việc đó."
+  },
+  {
+    "question": "Người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương tính theo đơn giá tiền lương hoặc tiền lương thực trả ít nhất bằng bao nhiêu?",
+    "expected_answer": "Người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương ít nhất bằng 200% đơn giá tiền lương hoặc tiền lương thực trả theo công việc đang làm.",
+    "expected_context": "Điểm b khoản 1 Điều 98 Bộ luật Lao động 2019 quy định người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả lương ít nhất bằng 200%."
+  },
+  {
+    "question": "Số giờ làm thêm của người lao động không quá bao nhiêu giờ trong một tháng theo quy định chung?",
+    "expected_answer": "Người sử dụng lao động bảo đảm số giờ làm thêm của người lao động không quá 40 giờ trong 01 tháng theo quy định chung của Bộ luật Lao động 2019.",
+    "expected_context": "Điểm b khoản 2 Điều 107 Bộ luật Lao động 2019 quy định bảo đảm số giờ làm thêm của người lao động không quá 40 giờ trong 01 tháng."
+  },
+  {
+    "question": "Người lao động kết hôn được nghỉ bao nhiêu ngày và có được hưởng nguyên lương không?",
+    "expected_answer": "Người lao động kết hôn được nghỉ việc riêng mà vẫn hưởng nguyên lương 03 ngày.",
+    "expected_context": "Điểm a khoản 1 Điều 115 Bộ luật Lao động 2019 quy định người lao động được nghỉ việc riêng mà vẫn hưởng nguyên lương khi kết hôn: nghỉ 03 ngày."
+  },
+  {
+    "question": "Luật Bảo hiểm xã hội số 41/2024/QH15 có hiệu lực thi hành từ ngày nào?",
+    "expected_answer": "Luật Bảo hiểm xã hội năm 2024 có hiệu lực thi hành từ ngày 01 tháng 7 năm 2025.",
+    "expected_context": "Khoản 1 Điều 140 Luật Bảo hiểm xã hội 2024 quy định Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2025."
+  },
+  {
+    "question": "Người làm việc theo hợp đồng lao động có thời hạn từ bao lâu thì thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc theo Luật BHXH 2024?",
+    "expected_answer": "Người làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ đủ 01 tháng trở lên thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.",
+    "expected_context": "Điểm a khoản 1 Điều 2 Luật Bảo hiểm xã hội 2024 quy định người làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ đủ 01 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc."
+  },
+  {
+    "question": "Bảo hiểm xã hội bắt buộc theo Luật Bảo hiểm xã hội 2024 gồm những chế độ nào?",
+    "expected_answer": "Bảo hiểm xã hội bắt buộc gồm các chế độ: Trợ cấp thai sản; Ốm đau; Thai sản; Hưu trí; Tử tuất; Bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo quy định của Luật An toàn, vệ sinh lao động.",
+    "expected_context": "Khoản 1 Điều 4 Luật Bảo hiểm xã hội 2024 quy định các chế độ bảo hiểm xã hội bắt buộc bao gồm trợ cấp thai sản, ốm đau, thai sản, hưu trí, tử tuất và bảo hiểm tai nạn lao động, bệnh nghề nghiệp."
+  },
+  {
+    "question": "Bảo hiểm xã hội tự nguyện theo Luật Bảo hiểm xã hội 2024 gồm những chế độ nào?",
+    "expected_answer": "Bảo hiểm xã hội tự nguyện gồm các chế độ: Trợ cấp thai sản; Hưu trí; Tử tuất; Bảo hiểm tai nạn lao động theo quy định của Luật An toàn, vệ sinh lao động.",
+    "expected_context": "Khoản 2 Điều 4 Luật Bảo hiểm xã hội 2024 quy định các chế độ bảo hiểm xã hội tự nguyện gồm trợ cấp thai sản, hưu trí, tử tuất và bảo hiểm tai nạn lao động."
+  },
+  {
+    "question": "Độ tuổi chung để công dân Việt Nam được hưởng trợ cấp hưu trí xã hội theo Luật BHXH 2024 là từ đủ bao nhiêu tuổi?",
+    "expected_answer": "Công dân Việt Nam từ đủ 75 tuổi trở lên mà không hưởng lương hưu hoặc trợ cấp bảo hiểm xã hội hằng tháng thì được hưởng trợ cấp hưu trí xã hội.",
+    "expected_context": "Điểm a khoản 1 Điều 21 Luật Bảo hiểm xã hội 2024 quy định điều kiện hưởng trợ cấp hưu trí xã hội là từ đủ 75 tuổi trở lên và không hưởng lương hưu hoặc trợ cấp BHXH hằng tháng."
+  },
+  {
+    "question": "Chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh có thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc không?",
+    "expected_answer": "Có, chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh nộp thuế theo phương pháp kê khai thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc theo Luật BHXH 2024.",
+    "expected_context": "Điểm m khoản 1 Điều 2 Luật Bảo hiểm xã hội 2024 quy định chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh nộp thuế theo phương pháp kê khai tham gia BHXH bắt buộc."
+  },
+  {
+    "question": "Mức tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc thấp nhất và cao nhất theo Luật BHXH 2024 được xác định thế nào?",
+    "expected_answer": "Tiền lương làm căn cứ đóng BHXH bắt buộc thấp nhất bằng mức tham chiếu; cao nhất bằng 20 lần mức tham chiếu tại thời điểm đóng.",
+    "expected_context": "Khoản 1 Điều 31 Luật Bảo hiểm xã hội 2024 quy định tiền lương làm căn cứ đóng BHXH bắt buộc thấp nhất bằng mức tham chiếu và cao nhất bằng 20 lần mức tham chiếu."
+  },
+  {
+    "question": "Hợp đồng lao động theo Bộ luật Lao động 2019 được phân loại thành những loại nào?",
+    "expected_answer": "Hợp đồng lao động gồm 02 loại: Hợp đồng lao động không xác định thời hạn và Hợp đồng lao động xác định thời hạn (thời hạn không quá 36 tháng).",
+    "expected_context": "Khoản 1 Điều 20 Bộ luật Lao động 2019 quy định 02 loại hợp đồng lao động: không xác định thời hạn và xác định thời hạn có thời hạn không quá 36 tháng."
+  },
+  {
+    "question": "Khi làm việc vào ban đêm, người lao động được trả thêm ít nhất bao nhiêu phần trăm tiền lương?",
+    "expected_answer": "Người lao động làm việc vào ban đêm thì được trả thêm ít nhất 30% tiền lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường.",
+    "expected_context": "Khoản 2 Điều 98 Bộ luật Lao động 2019 quy định người lao động làm việc vào ban đêm được trả thêm ít nhất 30% tiền lương."
+  },
+  {
+    "question": "Thời giờ làm việc bình thường của người lao động không được vượt quá bao nhiêu giờ trong một ngày và trong một tuần?",
+    "expected_answer": "Thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.",
+    "expected_context": "Khoản 1 Điều 105 Bộ luật Lao động 2019 quy định thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần."
+  },
+  {
+    "question": "Người lao động có bao nhiêu ngày nghỉ lễ, tết được nghỉ làm việc và hưởng nguyên lương trong một năm?",
+    "expected_answer": "Người lao động được nghỉ làm việc, hưởng nguyên lương trong 11 ngày lễ, tết hằng năm (bao gồm Tết Dương lịch, Tết Âm lịch 5 ngày, Giỗ Tổ Hùng Vương, 30/4, 1/5, Quốc khánh 2 ngày).",
+    "expected_context": "Khoản 1 Điều 112 Bộ luật Lao động 2019 quy định người lao động được nghỉ làm việc, hưởng nguyên lương trong 11 ngày lễ, tết."
+  },
+  {
+    "question": "Nghị định 145/2020/NĐ-CP quy định chi tiết và hướng dẫn thi hành những nội dung nào của Bộ luật Lao động?",
+    "expected_answer": "Nghị định 145/2020/NĐ-CP hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+    "expected_context": "Điều 1 Nghị định 145/2020/NĐ-CP quy định phạm vi điều chỉnh gồm điều kiện lao động và quan hệ lao động theo các nội dung của Bộ luật Lao động."
+  },
+  {
+    "question": "Nghị định 158/2025/NĐ-CP hướng dẫn thi hành luật nào và về nội dung gì?",
+    "expected_answer": "Nghị định 158/2025/NĐ-CP quy định chi tiết một số điều của Luật Bảo hiểm xã hội về bảo hiểm xã hội bắt buộc.",
+    "expected_context": "Điều 1 Nghị định 158/2025/NĐ-CP quy định chi tiết một số điều của Luật Bảo hiểm xã hội năm 2024 về bảo hiểm xã hội bắt buộc."
+  },
+  {
+    "question": "Đội tuyển bóng đá quốc gia nào đã giành chức vô địch World Cup 2022 tại Qatar?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Dữ liệu hiện có chỉ bao gồm văn bản pháp luật về lao động và bảo hiểm xã hội Việt Nam, câu hỏi nằm ngoài phạm vi tri thức."
+  },
+  {
+    "question": "Công thức và các bước nấu món phở bò truyền thống chuẩn vị Hà Nội?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn hiện có.",
+    "expected_context": "Dữ liệu hiện có chỉ bao gồm văn bản pháp luật về lao động và bảo hiểm xã hội Việt Nam, câu hỏi nằm ngoài phạm vi tri thức."
+  }
+]
